@@ -5,5 +5,5 @@ list.append("Carrot");
 list.append("Bunny")
 list.prepend("Parrot")
 
-console.log(list.size());
-console.log(list)
+console.log(list.head())
+console.log(list.tail())

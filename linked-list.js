@@ -8,41 +8,41 @@ class Node {
 
 class LinkedList{
     constructor(){
-        this.head = null;
-        this.tail = null;
+        this._head = null;
+        this._tail = null;
     }   
 
     append(value){
         const newLink = new Node(value);
             
-        if(this.head === null && this.tail === null){
-            this.tail = newLink;
-            this.head = newLink;
+        if(this._head === null && this._tail === null){
+            this._tail = newLink;
+            this._head = newLink;
         } else{
-            const oldHead = this.head;
-            this.head = newLink;
-            this.head.nextNode = oldHead;
+            const oldHead = this._head;
+            this._head = newLink;
+            this._head.nextNode = oldHead;
         }
     }
 
     prepend(value){
         const newLink = new Node(value);
 
-        if(this.head === null && this.tail === null){
-            this.tail = newLink;
-            this.head = newLink;
+        if(this._head === null && this._tail === null){
+            this._tail = newLink;
+            this._head = newLink;
         } else{
-            const oldTail = this.tail;
+            const oldTail = this._tail;
             oldTail.nextNode = newLink;
-            this.tail = newLink;
+            this._tail = newLink;
         }
     }
 
     size(){
-        if(this.head === null) return 0;
+        if(this._head === null) return 0;
 
         let size = 1;
-        let current = this.head;
+        let current = this._head;
 
         while(current.nextNode !== null){
             size++;
@@ -50,6 +50,18 @@ class LinkedList{
         }
 
         return size;
+    }
+
+    head(){
+        if(this._head === null) return undefined;
+
+        return this._head.value;
+    }
+
+    tail(){
+        if(this._tail === null) return undefined;
+        
+        return this._tail.value;
     }
 }
 
