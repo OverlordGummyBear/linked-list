@@ -64,21 +64,37 @@ class LinkedList{
         return this._tail.value;
     }
 
+    at(index){
+        if(this._head === null) return undefined;
+
+        let current = this._head;
+        let nodeIndex = 0;
+
+        while(current !== null){
+            if(nodeIndex === index)
+                return current.value;
+
+            nodeIndex++;
+            current = current.nextNode;
+        }
+
+        return undefined;
+    }
+
     contains(value){
         if(this._head === null) return false;
 
         let isFound = false;
         let current = this._head;
 
-        do{
+        while(current !== null){
             if(current.value === value){
                 isFound = true;
                 break;
             }
 
             current = current.nextNode;
-
-        } while(current.nextNode !== null)
+        }
 
         return isFound;
     }

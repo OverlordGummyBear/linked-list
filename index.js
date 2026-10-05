@@ -5,4 +5,4 @@ list.append("Carrot");
 list.append("Bunny")
 list.prepend("Parrot")
 
-console.log(list.contains("Bunny"));
+console.log(list.at(2));
