@@ -128,6 +128,21 @@ class LinkedList{
 
         return -1;
     }
+
+    toString(){
+        if(this._head === null) return "";
+
+        let current = this._head;
+        let buildString = ""
+
+        while(current !== null){
+            buildString += `( ${current.value} ) -> `;
+
+            current = current.nextNode;
+        }
+
+        return buildString += null;
+    }
 }
 
 export default LinkedList;
