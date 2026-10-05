@@ -63,6 +63,25 @@ class LinkedList{
         
         return this._tail.value;
     }
+
+    contains(value){
+        if(this._head === null) return false;
+
+        let isFound = false;
+        let current = this._head;
+
+        do{
+            if(current.value === value){
+                isFound = true;
+                break;
+            }
+
+            current = current.nextNode;
+
+        } while(current.nextNode !== null)
+
+        return isFound;
+    }
 }
 
 export default LinkedList;
